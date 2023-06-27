@@ -1,39 +1,65 @@
 @import "~bootstrap/scss/bootstrap";
 
-h1 {
-    color: red;
-}
-
 body {
     background-image: url("../img/bkg.jpg");
     background-repeat: repeat;
 }
 
-.container {
-    width: 80vw;
-    margin-inline: auto;
-    color: white;
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 80vw;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #ffffff;
 
+    // Titolo
     .title {
-        color: white;
-        text-transform: uppercase;
-        font-weight: bold;
+        width: 100%;
         text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
     }
 
-    .row {
+    // Elementi dati
+    .item {
+        width: 100%;
+    }
+
+    .data-item {
+        width: 100%;
         display: flex;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        padding: 10px 0;
-        border-bottom: 1px solid #ddd;
-    }
+        align-items: center;
+        padding: 10px;
 
-    .header {
-        font-weight: bold;
-    }
+        &.header {
+            font-weight: bold;
+        }
 
-    .element {
-        width: 10%;
+        &:not(:last-child) {
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .element {
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .medium {
+            flex: 2;
+        }
+
+        .large {
+            flex: 3.5;
+        }
+
+        .small {
+            flex: 1.5;
+            text-align: center;
+        }
     }
 }
