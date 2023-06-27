@@ -20,11 +20,18 @@ class TrainsTableSeeder extends Seeder
         $faker = Factory::create('it_IT');
         $companies = ["Trenitalia", "Italo"];
 
-        for ($i = 0; $i < 100; $i++) { // Genera 100 treni
+        for ($i = 0; $i < 20; $i++) { // Genera 20 treni
             $departure_time = $faker->time($format = 'H:i');
             $duration = $faker->time($format = 'H:i');
 
             $departure_time_carbon = \Carbon\Carbon::createFromFormat('H:i', $departure_time);
+
+            // Calcola una durata del viaggio compresa tra 1h e 5:30h
+            $hours = rand(1, 5);
+            $minutes = $hours == 5 ? rand(0, 30) : rand(0, 59);
+            $duration = \Carbon\Carbon::createFromTime($hours, $minutes)->format('H:i');
+
+
             $duration_carbon = Carbon::createFromFormat('H:i', $duration);
 
             // Calcola l'orario di arrivo
