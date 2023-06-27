@@ -16,8 +16,12 @@
 </head>
 
 <body>
-    <h1>Ciao!!!</h1>
-    <img src="{{ Vite::asset('resources/img/laravel.jpg') }}" alt="">
+    <div class="container">
+        <h1 class="title">orario treni del <span class="today-date">{{ \Carbon\Carbon::now()->format('d-m-Y') }}</span>
+        </h1>
+
+
+    </div>
 
 </body>
 

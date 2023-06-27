@@ -6,4 +6,17 @@ h1 {
 
 body {
     background-image: url("../img/bkg.jpg");
+    background-repeat: repeat;
+}
+
+.container {
+    width: 80vw;
+    margin-inline: auto;
+
+    .title {
+        color: white;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+    }
 }
